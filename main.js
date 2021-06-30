@@ -28,8 +28,12 @@ window.addEventListener('keydown', function (e) {
   } else if (e.key === ' ') {
     if (data.move === false) {
       data.timeID = setInterval(function () {
-        data.x += 5;
+        if (data.directon === east) data.x += 5;
+        else if (data.directon === west) data.x -= 5;
+        else if (data.directon === south) data.y += 5;
+        else if (data.directon === north) data.y -= 5;
         $car.style.left = `${data.x.toString()}px`;
+        $car.style.top = `${data.y.toString()}px`;
       }, 16);
       data.move = true;
     } else {
