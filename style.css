@@ -6,8 +6,9 @@ body {
   background-color: green;
 }
 
-img {
+#Car {
   max-height: 100px;
+  position: absolute;
 }
 
 .west {
