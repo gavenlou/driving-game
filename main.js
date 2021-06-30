@@ -1,5 +1,7 @@
 var data = {
   directon: 'east',
+  move: false,
+  timeID: 0,
   x: 0,
   y: 0
 };
@@ -24,10 +26,15 @@ window.addEventListener('keydown', function (e) {
     $car.className = south;
     data.directon = south;
   } else if (e.key === ' ') {
-    // eslint-disable-next-line no-unused-vars
-    var start = setInterval(function () {
-      data.x += 3;
-      $car.style.left = `${data.x.toString()}px`;
-    }, 16);
+    if (data.move === false) {
+      data.timeID = setInterval(function () {
+        data.x += 5;
+        $car.style.left = `${data.x.toString()}px`;
+      }, 16);
+      data.move = true;
+    } else {
+      clearInterval(data.timeID);
+      data.move = false;
+    }
   } else return null;
 });
