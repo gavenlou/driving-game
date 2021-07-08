@@ -6,6 +6,15 @@ body {
   background-color: green;
 }
 
+h1 {
+  float: right;
+}
+
+#Coin {
+  max-height: 50px;
+  position: absolute;
+}
+
 #Car {
   max-height: 100px;
   position: absolute;
